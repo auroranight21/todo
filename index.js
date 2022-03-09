@@ -16,12 +16,12 @@ const addToDo = (todo) => {
         todoEl.innerText = toDoText;
 
         todoEl.addEventListener('click', () => {todoEl.classList.toggle('completed')
-            updateLS();
+//             updateLS();
         });
         todoEl.addEventListener('contextmenu', (e) => {
             e.preventDefault()
             todoEl.remove();
-            updateLS();
+//             updateLS();
         })
 
         getToDos.appendChild(todoEl)
@@ -30,27 +30,27 @@ const addToDo = (todo) => {
     }
 }
 
-const todos = JSON.parse(localStorage.getItem('todos'));
-if(todos){
-    todos.forEach(todo => addToDo(todo))
-}
+// const todos = JSON.parse(localStorage.getItem('todos'));
+// if(todos){
+//     todos.forEach(todo => addToDo(todo))
+// }
 
 
-getForm.addEventListener('submit',(e) => {
-    e.preventDefault()
-    addToDo();
-})
+// getForm.addEventListener('submit',(e) => {
+//     e.preventDefault()
+//     addToDo();
+// })
 
 
-function updateLS (){
-    todoEl = document.querySelectorAll('li');
-    const todos = [];
-    todoEl.forEach(todoEl => {
-        todos.push({
-            text: todoEl.innerText,
-            completed: todoEl.classList.contains('completed')
-        })
-    })
-    localStorage.setItem('todos',JSON.stringify(todos));
-};
+// function updateLS (){
+//     todoEl = document.querySelectorAll('li');
+//     const todos = [];
+//     todoEl.forEach(todoEl => {
+//         todos.push({
+//             text: todoEl.innerText,
+//             completed: todoEl.classList.contains('completed')
+//         })
+//     })
+//     localStorage.setItem('todos',JSON.stringify(todos));
+// };
 
